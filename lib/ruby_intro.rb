@@ -3,11 +3,20 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+    sum = 0   
+    arr.each {|x| sum += x}
+    sum
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+      if arr.length < 1
+        return 0
+      elsif arr.length == 1
+        return arr[0]
+      else
+        arr.sort!
+        return arr[-2] + arr[-1]
+      end
 end
 
 def sum_to_n? arr, n
