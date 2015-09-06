@@ -9,18 +9,29 @@ def sum arr
 end
 
 def max_2_sum arr
-      if arr.length < 1
-        return 0
-      elsif arr.length == 1
-        return arr[0]
-      else
-        arr.sort!
-        return arr[-2] + arr[-1]
-      end
+    if arr.length < 1
+      return 0
+    elsif arr.length == 1
+      return arr[0]
+    else
+      arr.sort!
+      return arr[-2] + arr[-1]
+    end
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  i = 1
+  arr.each { |x|
+    j = i;
+    until j == arr.length do
+      if x + arr[j] == n
+        return true
+      end
+      j += 1
+    end
+    i += 1
+  }
+  false
 end
 
 # Part 2
