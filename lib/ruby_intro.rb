@@ -37,17 +37,31 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  "Hello, #{name}"
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  arr = ["B","C","D","F","G","H","J","K","L","M","N","P","Q","R","S","T","V","W","X","Y","Z"]
+  arr.each { |x| 
+  if s[0] != nil && s[0].upcase == x 
+    return true
+  end
+  }
+  false
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  arr = s.chars
+  arr.each { |x|
+    if x != "1" && x != "0"
+      return false
+    end
+  }
+  if s.length > 0 && s[-1].to_i + s[-2].to_i == 0
+    return true
+  end
+  false
 end
-
 # Part 3
 
 class BookInStock
