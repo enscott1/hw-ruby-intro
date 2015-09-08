@@ -63,7 +63,37 @@ def binary_multiple_of_4? s
   false
 end
 # Part 3
-
 class BookInStock
-# YOUR CODE HERE
+  def initialize (isbn, price)
+    if isbn == ""
+      raise ArgumentError.new("isbn cannot be nothing")
+    end
+    @ISBN = isbn
+    
+    if price <= 0
+      raise ArgumentError.new("price must be above 0$")
+    end
+    @price = price
+  end
+  
+  def isbn=(isbn)
+    @ISBN=isbn
+  end
+  
+  def isbn
+    return @ISBN
+  end
+  
+  def price=(price)
+    @price=price
+  end
+  
+  def price
+    return @price
+  end
+  
+  def price_as_string
+    sprintf("$%2.2f", @price)
+  end
+  
 end
